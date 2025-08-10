@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gold Value Calculator - Calculate the current value of your gold jewelry instantly. Get real-time gold prices and accurate estimates from JMGOLDBUYERS."
+    />
+    <meta
+      name="keywords"
+      content="Gold Calculator, Gold Price Calculator, Gold Value Estimator, Current Gold Price, JMGOLDBUYERS Calculator"
+    />
+    <meta name="author" content="JMGOLDBUYERS" />
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    <!-- Critical CSS (inline for immediate rendering) -->
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+      }
+      .navbar {
+        background: #fff !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .hero-section {
+        background: linear-gradient(135deg, #ffd700, #ff8c00);
+        min-height: 50vh;
+      }
+      .btn-primary {
+        background: #007bff;
+        border: #007bff;
+        padding: 12px 30px;
+      }
+      .btn-group-inline {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .calculator-container {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .form-control {
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        padding: 12px;
+      }
+      @media (max-width: 768px) {
+        .btn-group-inline {
+          gap: 10px;
+        }
+        .btn {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+        .calculator-container {
+          padding: 1rem;
+        }
+      }
+      @media (max-width: 480px) {
+        .btn-group-inline {
+          gap: 8px;
+          flex-direction: column;
+          align-items: center;
+        }
+        .btn {
+          width: 100%;
+          max-width: 250px;
+        }
+      }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://jmgoldbuyers.com/#business",
+            "name": "JM Gold Buyers",
+            "alternateName": "JMGOLDBUYERS",
+            "url": "https://jmgoldbuyers.com",
+            "telephone": "+91-7099657978",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Basistha Chariali Natun Bazaar",
+              "addressLocality": "Guwahati",
+              "addressRegion": "Assam",
+              "postalCode": "781029",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 26.1158,
+              "longitude": 91.7086
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "10:00",
+              "closes": "18:00"
+            },
+            "priceRange": "₹₹₹",
+            "currenciesAccepted": "INR",
+            "paymentAccepted": "Cash"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://jmgoldbuyers.com/calculator.html#webpage",
+            "url": "https://jmgoldbuyers.com/calculator.html",
+            "name": "Gold Calculator Guwahati | JM Gold Buyers Price Tool",
+            "description": "Calculate gold value instantly with JM Gold Buyers' free calculator. Get real-time gold prices for 18K, 22K, 24K jewelry in Guwahati, Assam.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://jmgoldbuyers.com/#website"
+            },
+            "about": {
+              "@id": "https://jmgoldbuyers.com/#business"
+            },
+            "mainEntity": {
+              "@type": "SoftwareApplication",
+              "name": "Gold Value Calculator",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Web Browser",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "INR"
+              }
+            }
+          }
+        ]
+      }
+    </script>
+    <title>Gold Calculator Guwahati | JM Gold Buyers Price Tool</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Calculate gold value instantly with JM Gold Buyers' free calculator. Get real-time gold prices for 18K, 22K, 24K jewelry in Guwahati, Assam."
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://jmgoldbuyers.com/calculator.html" />
+    <link
+      rel="alternate"
+      hreflang="en-IN"
+      href="https://jmgoldbuyers.com/calculator.html"
+    />
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://www.livepriceofgold.com" />
+    <link rel="dns-prefetch" href="//api.metals.live" />
+    <link rel="dns-prefetch" href="//api.exchangerate-api.com" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Optimized Stylesheets -->
+    <link
+      rel="preload"
+      href="css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      crossorigin
+    />
+    <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>💎</text></svg>"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <i class="fas fa-gem"></i>
+          <span class="logo-text">JMGOLDBUYERS</span>
+          <span class="logo-tagline">Premium Gold Buyers</span>
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html">
+              <i class="fas fa-home"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html">
+              <i class="fas fa-user-tie"></i>
+              <span>About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="calculator.html">
+              <i class="fas fa-calculator"></i>
+              <span>Calculator</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html">
+              <i class="fas fa-phone"></i>
+              <span>Contact</span>
+            </a>
+          </li>
+          <li class="nav-item nav-cta">
+            <a
+              href="https://wa.me/917099657978"
+              class="btn btn-premium"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-whatsapp"></i>
+              <span>Book Appointment</span>
+            </a>
+          </li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-about">
+      <div class="hero-content">
+        <h1 class="fade-in">Gold Value Calculator</h1>
+        <p class="subtitle fade-in">Get instant estimates for your gold</p>
+        <p class="fade-in">
+          Calculate the current market value of your gold jewelry, coins, and
+          ornaments with real-time pricing
+        </p>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator-section" class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 class="section-title">Calculate Your Gold Value</h2>
+          <p class="section-subtitle">
+            Enter your gold details below to get an instant price estimate
+          </p>
+        </div>
+
+        <!-- Current Gold Price Display -->
+        <div class="gold-price-display fade-in">
+          <h3>
+            <i class="fas fa-coins text-gold"></i> Real-Time Gold Price (24K
+            Pure)
+          </h3>
+          <div class="price-display-grid">
+            <div class="price-item">
+              <strong>Per Gram:</strong>
+              <span id="currentPrice" data-price="6200">Loading...</span>
+            </div>
+            <div class="price-item">
+              <strong>Per 10 Grams:</strong>
+              <span id="price10g">Loading...</span>
+            </div>
+            <div class="price-item">
+              <strong>Per Tola (11.66g):</strong>
+              <span id="priceTola">Loading...</span>
+            </div>
+          </div>
+          <small
+            >*Prices shown are for 24K pure gold and are updated in real-time.
+            Actual rates may vary based on market conditions and purity.</small
+          >
+          <br />
+          <small id="lastUpdate" class="text-gold"
+            >Fetching latest prices...</small
+          >
+          <br />
+          <button id="refreshPriceBtn" class="btn btn-refresh">
+            <i class="fas fa-sync-alt"></i> Refresh Prices
+          </button>
+        </div>
+
+        <!-- TradingView Gold Chart -->
+        <div class="tradingview-widget-container fade-in">
+          <div class="section-header">
+            <h3 class="text-center">
+              <i class="fas fa-chart-line text-gold"></i> Live Gold Price Chart
+            </h3>
+            <p class="text-center">
+              Real-time gold market movements and trends
+            </p>
+          </div>
+          <div
+            class="tradingview-widget-container__widget"
+            id="tradingview_chart"
+          ></div>
+          <div class="tradingview-widget-copyright">
+            <a
+              href="https://www.tradingview.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span class="blue-text">Track all markets on TradingView</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Live Gold Price India -->
+        <div class="live-gold-price-container fade-in">
+          <div class="section-header">
+            <h3 class="text-center">
+              <i class="fas fa-rupee-sign text-gold"></i> Live Gold Prices in
+              India
+            </h3>
+            <p class="text-center">
+              Current gold rates across major Indian cities
+            </p>
+          </div>
+          <div class="gold-price-iframe-container">
+            <iframe
+              src="https://www.livepriceofgold.com/india-gold-price.html"
+              class="gold-price-iframe"
+              title="Live Gold Prices in India"
+              loading="lazy"
+              allowtransparency="true"
+              frameborder="0"
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Calculator Form -->
+        <div class="calculator-container fade-in" id="goldCalculator">
+          <h3 class="text-center mb-2">
+            <i class="fas fa-calculator text-gold"></i> Gold Value Calculator
+          </h3>
+
+          <form id="calculatorForm">
+            <div class="form-group">
+              <label for="goldWeight">
+                <i class="fas fa-weight-hanging"></i> Weight (in grams)
+              </label>
+              <input
+                type="number"
+                id="goldWeight"
+                name="goldWeight"
+                placeholder="Enter weight in grams"
+                min="0.1"
+                step="0.1"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="goldPurity">
+                <i class="fas fa-gem"></i> Gold Purity
+              </label>
+              <select id="goldPurity" name="goldPurity" required>
+                <option value="">Select Purity</option>
+                <option value="91.6">22K (91.6% pure)</option>
+                <option value="87.5">21K (87.5% pure)</option>
+                <option value="83.3">20K (83.3% pure)</option>
+                <option value="75">18K (75% pure)</option>
+                <option value="58.3">14K (58.3% pure)</option>
+                <option value="41.7">10K (41.7% pure)</option>
+                <option value="99.9">24K (99.9% pure - Coins/Bars)</option>
+                <option value="custom">Custom Purity</option>
+              </select>
+            </div>
+
+            <div class="form-group custom-purity-group" id="customPurityGroup">
+              >
+              <label for="customPurity">
+                <i class="fas fa-percent"></i> Custom Purity (%)
+              </label>
+              <input
+                type="number"
+                id="customPurity"
+                name="customPurity"
+                placeholder="Enter purity percentage"
+                min="10"
+                max="99.9"
+                step="0.1"
+              />
+            </div>
+
+            <button
+              type="button"
+              id="calculateBtn"
+              class="btn btn-primary btn-full-width"
+            >
+              > <i class="fas fa-calculator"></i> Calculate Value
+            </button>
+          </form>
+
+          <!-- Results Display -->
+          <div id="calculationResult" class="result-display result-hidden">
+            >
+            <!-- Results will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium Gold Evaluation Section -->
+    <section class="section section-light-gold">
+      <div class="container">
+        <div class="section-header fade-in text-center">
+          <h2 class="section-title">Premium Gold Evaluation</h2>
+          <p class="section-subtitle">Professional Assessment You Can Trust</p>
+          <p class="section-description">
+            Our expert evaluation process ensures you get the maximum value for
+            your precious gold jewelry. We use advanced testing equipment and
+            follow industry-standard procedures to determine accurate gold
+            purity and weight.
+          </p>
+
+          <!-- Premium Evaluation Logo Button -->
+          <div class="premium-evaluation-logo fade-in">
+            <div class="evaluation-badge">
+              <div class="badge-content">
+                <div class="badge-icon">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <div class="badge-text">
+                  <span class="badge-title">Certified Professional</span>
+                  <span class="badge-subtitle">Gold Evaluation Service</span>
+                </div>
+                <div class="badge-checkmark">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4">
+            <div class="card feature-card evaluation-card h-100 fade-in">
+              <div class="card-body p-4 text-center">
+                <div class="evaluation-icon mx-auto mb-3">
+                  <i class="fas fa-medal"></i>
+                </div>
+                <h4 class="card-title mb-3">24k Gold Purity Testing</h4>
+                <p class="card-text">
+                  Advanced electronic testing equipment ensures precise purity
+                  analysis for all gold types, from 10k to 24k pure gold
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4">
+            <div class="card feature-card evaluation-card h-100 fade-in">
+              <div class="card-body p-4 text-center">
+                <div class="evaluation-icon mx-auto mb-3">
+                  <i class="fas fa-weight"></i>
+                </div>
+                <h4 class="card-title mb-3">Digital Weighing Scales</h4>
+                <p class="card-text">
+                  Certified digital scales with precision measurement to the
+                  exact gram, ensuring accurate weight calculations for fair
+                  pricing
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4">
+            <div class="card feature-card evaluation-card h-100 fade-in">
+              <div class="card-body p-4 text-center">
+                <div class="evaluation-icon mx-auto mb-3">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <h4 class="card-title mb-3">Transparent Process</h4>
+                <p class="card-text">
+                  Watch the entire evaluation process with detailed
+                  explanations. We believe in complete transparency and customer
+                  education
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4">
+            <div class="card feature-card evaluation-card h-100 fade-in">
+              <div class="card-body p-4 text-center">
+                <div class="evaluation-icon mx-auto mb-3">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="card-title mb-3">Best Market Rates</h4>
+                <p class="card-text">
+                  Get cash immediately after evaluation and agreement. Our rates
+                  are based on current market prices for maximum value
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-lg-8 text-center">
+            <div class="evaluation-guarantee fade-in">
+              <h3 class="mb-3">
+                <i class="fas fa-certificate text-gold"></i>
+                Our Evaluation Guarantee
+              </h3>
+              <p class="mb-4">
+                We guarantee accurate assessment using industry-standard
+                methods. If you're not satisfied with our evaluation, we provide
+                a detailed explanation and second opinion at no additional cost.
+              </p>
+              <div class="btn-group-inline">
+                <a href="#calculator-section" class="btn btn-primary me-3">
+                  <i class="fas fa-calculator"></i> Try Our Calculator
+                </a>
+                <a href="contact.html#contact-info" class="btn btn-secondary">
+                  <i class="fas fa-phone"></i> Schedule Evaluation
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Our Calculator Works Section -->
+    <section class="section section-light-gold">
+      <div class="container">
+        <div class="section-header fade-in text-center">
+          <h2 class="section-title">How Our Calculator Works</h2>
+          <p class="section-subtitle">
+            Understanding gold valuation made simple
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mb-4">
+            <div class="card feature-card calculator-card h-100 fade-in">
+              <div class="card-body p-4 text-center">
+                <div class="calculator-icon mx-auto mb-3">
+                  <i class="fas fa-download"></i>
+                </div>
+                <h4 class="card-title mb-3">Real-Time Prices</h4>
+                <p class="card-text">
+                  We fetch live gold prices from international markets to ensure
+                  accurate calculations
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mb-4">
+            <div class="card feature-card calculator-card h-100 fade-in">
+              <div class="card-body p-4 text-center">
+                <div class="calculator-icon mx-auto mb-3">
+                  <i class="fas fa-percentage"></i>
+                </div>
+                <h4 class="card-title mb-3">Purity Calculation</h4>
+                <p class="card-text">
+                  We calculate pure gold weight based on the karat rating or
+                  purity percentage of your gold
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mb-4">
+            <div class="card feature-card calculator-card h-100 fade-in">
+              <div class="card-body p-4 text-center">
+                <div class="calculator-icon mx-auto mb-3">
+                  <i class="fas fa-calculator"></i>
+                </div>
+                <h4 class="card-title mb-3">Instant Results</h4>
+                <p class="card-text">
+                  Get immediate value estimates with detailed breakdowns of
+                  weight, purity, and pricing
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 mb-4">
+            <div class="card feature-card calculator-card h-100 fade-in">
+              <div class="card-body p-4 text-center">
+                <div class="calculator-icon mx-auto mb-3">
+                  <i class="fas fa-info-circle"></i>
+                </div>
+                <h4 class="card-title mb-3">Transparent Process</h4>
+                <p class="card-text">
+                  See exactly how your gold value is calculated with complete
+                  transparency
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold Purity Guide -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in text-center">
+          <h2 class="section-title">Gold Purity Guide</h2>
+          <p class="section-subtitle">
+            Understanding different types of gold and their purity levels
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-8">
+            <div class="table-responsive fade-in">
+              <table
+                class="table table-bordered table-hover purity-guide-table"
+              >
+                <thead class="table-header">
+                  <tr>
+                    <th scope="col" class="text-center">Gold Type</th>
+                    <th scope="col" class="text-center">Purity %</th>
+                    <th scope="col" class="text-center">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="purity-row">
+                    <td class="text-center">
+                      <span class="karat-badge badge-24k">24K</span>
+                    </td>
+                    <td class="text-center purity-percentage">99.9%</td>
+                    <td class="purity-description">
+                      <strong>Pure Gold:</strong> Typically used in gold coins,
+                      bars, and investment bullion. Soft and malleable, not
+                      suitable for jewelry.
+                    </td>
+                  </tr>
+                  <tr class="purity-row">
+                    <td class="text-center">
+                      <span class="karat-badge badge-22k">22K</span>
+                    </td>
+                    <td class="text-center purity-percentage">91.6%</td>
+                    <td class="purity-description">
+                      <strong>Traditional Jewelry:</strong> Most common purity
+                      for Indian gold jewelry. Good balance of purity and
+                      durability for ornaments and traditional jewelry.
+                    </td>
+                  </tr>
+                  <tr class="purity-row">
+                    <td class="text-center">
+                      <span class="karat-badge badge-21k">21K</span>
+                    </td>
+                    <td class="text-center purity-percentage">87.5%</td>
+                    <td class="purity-description">
+                      <strong>Premium Jewelry:</strong> High purity gold used in
+                      premium jewelry. Slightly more durable than 22K while
+                      maintaining high gold content.
+                    </td>
+                  </tr>
+                  <tr class="purity-row">
+                    <td class="text-center">
+                      <span class="karat-badge badge-18k">18K</span>
+                    </td>
+                    <td class="text-center purity-percentage">75.0%</td>
+                    <td class="purity-description">
+                      <strong>Modern Jewelry:</strong> Popular for modern
+                      jewelry, especially in international markets. More durable
+                      and suitable for daily wear.
+                    </td>
+                  </tr>
+                  <tr class="purity-row">
+                    <td class="text-center">
+                      <span class="karat-badge badge-14k">14K</span>
+                    </td>
+                    <td class="text-center purity-percentage">58.3%</td>
+                    <td class="purity-description">
+                      <strong>Fashion Jewelry:</strong> Commonly used in fashion
+                      jewelry. More affordable while still containing
+                      significant gold content.
+                    </td>
+                  </tr>
+                  <tr class="purity-row">
+                    <td class="text-center">
+                      <span class="karat-badge badge-10k">10K</span>
+                    </td>
+                    <td class="text-center purity-percentage">41.7%</td>
+                    <td class="purity-description">
+                      <strong>Entry Level:</strong> Minimum gold content to be
+                      considered "gold" in many countries. Very durable but
+                      lower gold value.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info Card -->
+        <div class="row justify-content-center mt-4">
+          <div class="col-lg-8">
+            <div class="card purity-info-card fade-in">
+              <div class="card-body p-4 text-center">
+                <h5 class="card-title mb-3">
+                  <i class="fas fa-lightbulb text-gold"></i>
+                  Quick Tip
+                </h5>
+                <p class="card-text">
+                  Higher karat gold contains more pure gold but is softer. Lower
+                  karat gold is more durable but contains less pure gold. Our
+                  calculator automatically adjusts prices based on the exact
+                  purity of your gold items.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wedding & Special Occasion Gold Section -->
+    <section class="section wedding-gold">
+      <div class="container">
+        <div class="wedding-grid">
+          <div class="wedding-image fade-in">
+            <img
+              src="images/hindu-bride-shows-her-wedding-rings-hands-with-henna-tatt.jpg"
+              alt="Wedding Gold Jewelry with Henna"
+              loading="lazy"
+            />
+          </div>
+          <div class="wedding-content fade-in">
+            <h2 class="section-title">Wedding & Special Occasion Gold</h2>
+            <p class="section-subtitle">Transform Your Precious Memories</p>
+            <p>
+              We understand the emotional value of wedding and special occasion
+              jewelry. When it's time to part with these precious pieces, we
+              ensure you receive the maximum value while treating your items
+              with the respect they deserve.
+            </p>
+            <div class="wedding-features">
+              <div class="wedding-feature">
+                <i class="fas fa-heart"></i>
+                <span>Sensitive handling of sentimental pieces</span>
+              </div>
+              <div class="wedding-feature">
+                <i class="fas fa-gem"></i>
+                <span>Specialized evaluation for intricate designs</span>
+              </div>
+              <div class="wedding-feature">
+                <i class="fas fa-award"></i>
+                <span>Premium rates for high-quality craftsmanship</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Important Notes -->
+    <section class="section section-light-gold">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 class="section-title">Important Notes</h2>
+          <p class="section-subtitle">
+            Please read these important points about gold valuation
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text fade-in">
+            <h3>
+              <i class="fas fa-exclamation-triangle text-gold"></i> Disclaimer
+            </h3>
+            <ul class="mission-list">
+              <li>
+                This calculator provides estimated values based on current
+                market prices
+              </li>
+              <li>
+                Actual prices may vary based on market conditions and
+                fluctuations
+              </li>
+              <li>
+                Final valuation will be done through physical testing and
+                verification
+              </li>
+              <li>
+                Prices shown are for pure gold content only, not including any
+                design or making charges
+              </li>
+              <li>
+                Deductions may apply for impurities, stones, or other materials
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-text fade-in">
+            <h3>
+              <i class="fas fa-lightbulb text-gold"></i> Tips for Accurate
+              Estimates
+            </h3>
+            <ul class="mission-list">
+              <li>Weigh your gold accurately using a precise digital scale</li>
+              <li>Check for hallmarks or purity stamps on your jewelry</li>
+              <li>Remove any stones or non-gold components before weighing</li>
+              <li>
+                When in doubt about purity, choose a lower karat option for
+                conservative estimates
+              </li>
+              <li>
+                Visit our store for professional testing and accurate evaluation
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section section-dark">
+      <div class="container text-center">
+        <div class="fade-in">
+          <h2 class="section-title">Ready to Sell Your Gold?</h2>
+          <p class="section-subtitle">
+            Get the best value for your gold with professional evaluation at our
+            store
+          </p>
+          <div class="btn-group-inline">
+            <a href="contact.html" class="btn btn-primary">Visit Our Store</a>
+            <a
+              href="https://wa.me/917099657978"
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+              >WhatsApp Quote</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>JMGOLDBUYERS</h3>
+            <p>
+              Guwahati's most trusted gold buyers offering transparent, fair,
+              and instant cash for your gold jewelry and ornaments.
+            </p>
+            <div class="social-links">
+              <a
+                href="tel:+917099657978"
+                title="Call Us Now - Get Instant Gold Quote"
+                aria-label="Call JMGOLDBUYERS for immediate assistance"
+                class="contact-button phone-button"
+              >
+                <i class="fas fa-phone"></i>
+                <span class="button-text">
+                  <strong>Call Now</strong>
+                  <small>+91 70996 57978</small>
+                </span>
+              </a>
+              <a
+                href="https://wa.me/917099657978?text=Hi JMGOLDBUYERS! I'm interested in selling my gold. Please provide me with current rates and evaluation process."
+                target="_blank"
+                rel="noopener noreferrer"
+                title="WhatsApp Us - Quick Gold Evaluation"
+                aria-label="WhatsApp JMGOLDBUYERS for quick response"
+                class="contact-button whatsapp-button"
+              >
+                <i class="fab fa-whatsapp"></i>
+                <span class="button-text">
+                  <strong>WhatsApp</strong>
+                  <small>Quick Response</small>
+                </span>
+              </a>
+              <a
+                href="mailto:jmgoldbuyersguwahati@gmail.com?subject=Gold Selling Inquiry&body=Hello JMGOLDBUYERS,%0D%0A%0D%0AI am interested in selling my gold jewelry/ornaments. Please provide me with:%0D%0A- Current gold rates%0D%0A- Evaluation process%0D%0A- Store location and timings%0D%0A%0D%0AThank you!"
+                title="Email Us - Detailed Inquiry"
+                aria-label="Email JMGOLDBUYERS for detailed information"
+                class="contact-button email-button"
+              >
+                <i class="fas fa-envelope"></i>
+                <span class="button-text">
+                  <strong>Email Us</strong>
+                  <small>Detailed Info</small>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="calculator.html">Gold Calculator</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Our Services</h3>
+            <a href="index.html#services">Sell Gold Jewelry</a>
+            <a href="index.html#services">Settle Gold Loan</a>
+            <a href="index.html#services">Free Purity Testing</a>
+            <a href="index.html#services">Gold Coins & Bars</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <div class="contact-details">
+              <p class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span
+                  >Basistha Chariali Natun Bazaar<br />Opposite Kali Mandir,
+                  Near Patanjali Shop<br />Guwahati, Assam 781029</span
+                >
+              </p>
+              <p class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><a href="tel:+917099657978">+91 70996 57978</a></span>
+              </p>
+              <p class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><a href="tel:+917718262733">+91 77182 62733</a></span>
+              </p>
+              <p class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span
+                  ><a href="mailto:jmgoldbuyersguwahati@gmail.com"
+                    >jmgoldbuyersguwahati@gmail.com</a
+                  ></span
+                >
+              </p>
+            </div>
+
+            <div class="footer-social">
+              <h4>Connect With Us</h4>
+              <div class="social-links">
+                <a
+                  href="https://www.instagram.com/jm_gold_buyers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Follow us on Instagram"
+                  class="social-instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href="https://wa.me/917099657978"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Chat on WhatsApp"
+                  class="social-whatsapp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 JMGOLDBUYERS. All rights reserved. | Designed with
+            <span class="heart-animation">❤️</span> for Guwahati
+          </p>
+          <p class="developer-credit">
+            Designed with Love <span class="interactive-heart">💖</span> by
+            <a
+              href="https://github.com/unanimousaditya"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="developer-link"
+              title="Visit Aditya Raj's GitHub Profile"
+            >
+              Aditya Raj
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optimized JavaScript Loading -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js" defer></script>
+    <script>
+      // Additional calculator-specific JavaScript
+      document.addEventListener("DOMContentLoaded", function () {
+        const puritySelect = document.getElementById("goldPurity");
+        const customPurityGroup = document.getElementById("customPurityGroup");
+        const customPurityInput = document.getElementById("customPurity");
+
+        // Show/hide custom purity input
+        puritySelect.addEventListener("change", function () {
+          if (this.value === "custom") {
+            customPurityGroup.style.display = "block";
+            customPurityInput.required = true;
+          } else {
+            customPurityGroup.style.display = "none";
+            customPurityInput.required = false;
+            customPurityInput.value = "";
+          }
+        });
+
+        // Override calculateGoldValue function for custom purity
+        window.originalCalculateGoldValue = window.calculateGoldValue;
+        window.calculateGoldValue = function () {
+          const puritySelect = document.getElementById("goldPurity");
+          const customPurityInput = document.getElementById("customPurity");
+
+          if (puritySelect.value === "custom" && customPurityInput.value) {
+            // Temporarily set the purity value for calculation
+            puritySelect.dataset.customValue = customPurityInput.value;
+          }
+
+          // Call original function
+          window.originalCalculateGoldValue();
+        };
+      });
+
+      // Load TradingView Chart
+      function loadTradingViewChart() {
+        new TradingView.widget({
+          width: "100%",
+          height: 400,
+          symbol: "COMEX:GC1!",
+          interval: "5",
+          timezone: "Asia/Kolkata",
+          theme: "light",
+          style: "1",
+          locale: "en",
+          toolbar_bg: "#f1f3f6",
+          enable_publishing: false,
+          allow_symbol_change: false,
+          container_id: "tradingview_chart",
+          studies: ["MASimple@tv-basicstudies", "Volume@tv-basicstudies"],
+          show_popup_button: true,
+          popup_width: "1000",
+          popup_height: "650",
+          hide_side_toolbar: false,
+          details: true,
+          hotlist: true,
+          calendar: false,
+          studies_overrides: {},
+          overrides: {
+            "mainSeriesProperties.candleStyle.upColor": "#FFD700",
+            "mainSeriesProperties.candleStyle.downColor": "#B8860B",
+            "mainSeriesProperties.candleStyle.borderUpColor": "#FFD700",
+            "mainSeriesProperties.candleStyle.borderDownColor": "#B8860B",
+          },
+          disabled_features: ["use_localstorage_for_settings"],
+          enabled_features: ["study_templates"],
+        });
+      }
+
+      // Load TradingView script and initialize chart
+      const tradingViewScript = document.createElement("script");
+      tradingViewScript.src = "https://s3.tradingview.com/tv.js";
+      tradingViewScript.onload = loadTradingViewChart;
+      document.head.appendChild(tradingViewScript);
+    </script>
+
+    <!-- Floating Contact Button -->
+    <div class="floating-contact-container">
+      <button
+        class="main-contact-button"
+        id="contactToggle"
+        title="Contact Us"
+        aria-label="Toggle contact options"
+      >
+        <i class="fas fa-headset"></i>
+      </button>
+      <div class="contact-options" id="contactOptions">
+        <a
+          href="mailto:jmgoldbuyersguwahati@gmail.com"
+          class="contact-option email-option"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-label="Email Us"
+          title="Send us an email"
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a
+          href="tel:+917099657978"
+          class="contact-option phone-option"
+          data-label="Call Now"
+          title="Call us now"
+        >
+          <i class="fas fa-phone"></i>
+        </a>
+        <a
+          href="https://wa.me/917099657978?text=Hi JMGOLDBUYERS! I used your gold calculator and would like to get a quote."
+          class="contact-option whatsapp-option"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-label="WhatsApp"
+          title="Chat with us on WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Performance Enhancement Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Preload critical pages for faster navigation
+        const criticalPages = ["index.html", "about.html", "contact.html"];
+        criticalPages.forEach((page) => {
+          const link = document.createElement("link");
+          link.rel = "prefetch";
+          link.href = page;
+          document.head.appendChild(link);
+        });
+
+        // Optimize calculator interactions
+        const calculatorInputs = document.querySelectorAll(
+          "#goldCalculator input, #goldCalculator select"
+        );
+        calculatorInputs.forEach((input) => {
+          input.addEventListener(
+            "input",
+            debounce(function () {
+              // Trigger calculation with debounce for better performance
+              if (typeof calculateGoldValue === "function") {
+                calculateGoldValue();
+              }
+            }, 300)
+          );
+        });
+
+        // Debounce function for performance
+        function debounce(func, wait) {
+          let timeout;
+          return function executedFunction(...args) {
+            const later = () => {
+              clearTimeout(timeout);
+              func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+          };
+        }
+
+        // Optimize images with intersection observer
+        if ("IntersectionObserver" in window) {
+          const imageObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const img = entry.target;
+                  if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.classList.remove("lazy");
+                    imageObserver.unobserve(img);
+                  }
+                }
+              });
+            },
+            { rootMargin: "50px" }
+          );
+
+          document.querySelectorAll("img[data-src]").forEach((img) => {
+            imageObserver.observe(img);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /calculator.html
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /favicon/
+Disallow: /admin/
+Disallow: /*.log$
+Disallow: /private/
+Disallow: /temp/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Block unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+Sitemap: https://jmgoldbuyers.com/sitemap.xml
